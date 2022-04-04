@@ -1,5 +1,9 @@
 pipeline {
   agent { label 'linux' }
+  tools {
+    maven 'MAVEN_HOME'
+    jdk 'JAVA_HOME'
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
